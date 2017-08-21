@@ -12,6 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var tView: UITableView!
     
+    var catindigs = ["Chris","Lois","Matt"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +23,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return catindigs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell ()
+        cell.textLabel?.text = catindigs[indexPath.row]
         return cell
     }
     override func didReceiveMemoryWarning() {
